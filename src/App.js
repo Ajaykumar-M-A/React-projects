@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import AddCompanyEmployee from './components/AddCompanyEmployee';
+import SearchCompanyemployee from './components/SearchCompanyemployee';
+import DeleteCompanyemployee from './components/DeleteCompanyemployee';
+import ViewCompnayEmployee from './components/ViewCompnayEmployee';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+<BrowserRouter>
+
+<Routes>
+<Route path=''    element={<AddCompanyEmployee/>}/>
+<Route path='search' element={<SearchCompanyemployee/>}/>
+<Route path='view'   element={<ViewCompnayEmployee/>}/>
+<Route path='delete'   element={<DeleteCompanyemployee/>}/>
+
+</Routes>
+
+
+</BrowserRouter>
     </div>
   );
 }
